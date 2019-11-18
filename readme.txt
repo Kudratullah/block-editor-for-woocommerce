@@ -67,5 +67,5 @@ Please Clear your browser cache after enabling this plugin.
 
 == Changelog ==
 
-= v1.0.0 (13th November, 2019) =
+= v1.0.0 (18th November, 2019) =
  * Initial Release.
