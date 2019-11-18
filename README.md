@@ -15,4 +15,4 @@ Now you can experiment with the visual block editor feature for editing WooComme
 
 This plugin (Backend – Block Editor) tested with latest Chrome (Version 78) and Firefox (Version 67) for the meta box handling. As you probably know Block Editor always saves rendered HTML, so it should be safe to remove/disable this plugin anytime you want.
 
-Any bug report, feature request will be appreciated.
+Any bug report, PR, feature request will be appreciated.

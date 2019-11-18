@@ -1,4 +1,4 @@
-=== WooCommerce Block Editor ===
+=== WC Block Editor ===
 Contributors: mhamudul_hk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -23,7 +23,7 @@ Many people use visual editor for editing the WooCommerce Product. I was just ex
 
 This plugin (Backend – Block Editor) tested with latest Chrome (Version 78) and Firefox (Version 67) for the meta box handling. As you know Block Editor always saves rendered HTML, so it should be safe to remove/disable this plugin anytime you want.
 
-Any bug report, PR, feature request will be appreciated. Checkout our [GitHub](https://github.com/Kudratullah/WooCommerce-Block-Editor) Repo.
+Any bug report, PR, feature request will be appreciated. Checkout our [GitHub Repo](git@github.com:Kudratullah/WC-Block-Editor.git).
 
 == Installation ==
 

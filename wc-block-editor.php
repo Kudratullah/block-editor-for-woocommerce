@@ -9,9 +9,9 @@
  * @license GPL-v2 or later
  *
  * @wordpress
- * Plugin Name: WooCommerce Block Editor
+ * Plugin Name: WC Block Editor
  * Description: Enable Block Editor (Gutenberg) for WooCommerce Product
- * Plugin URI: https://pixelhive.pro/shop/plugins/wc-block-editor
+ * Plugin URI: https://pixelhive.pro/go/wcblockeditor/
  * Author: PixelHive
  * Author URI: https://pixelhive.pro
  * Version: 1.0.0
