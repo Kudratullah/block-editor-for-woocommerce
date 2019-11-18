@@ -1,6 +1,6 @@
 ### Enable Block Editor (Gutenberg) For WooCommerce.
 
-![WooCommerce Block Editor](https://pixelhive.pro/wp-content/uploads/2019/11/woocommerce-block-editor-banner.png)
+![Block Editor For WooCommerce](https://pixelhive.pro/wp-content/uploads/2019/11/woocommerce-block-editor-banner.png)
 
 #### WooCommerce + Gutenberg = Awesome 🤩
 
