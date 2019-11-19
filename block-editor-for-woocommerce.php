@@ -105,6 +105,9 @@ function PxH_WC_Enable_Block_Editor() {
 	remove_filter( 'gutenberg_can_edit_post_type', 'WC_Post_Types::gutenberg_can_edit_post_type', 10 );
 	remove_filter( 'use_block_editor_for_post_type', 'WC_Post_Types::gutenberg_can_edit_post_type', 10 );
 	add_action( 'admin_enqueue_scripts', 'PxH_WC_Enable_Block_Editor_Scripts', 10 );
+	// set show_in_rest = true for product_cat & product_tag for showing in block editor taxonomy selector
+	add_filter( 'woocommerce_taxonomy_args_product_cat', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest');
+	add_filter( 'woocommerce_taxonomy_args_product_tag', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest');
 }
 
 /**
@@ -127,5 +130,19 @@ function PxH_WC_Enable_Block_Editor_Scripts() {
 			true
 		);
 	}
+}
+
+/**
+ * Allow WooCommerce Product Category And Product Tags in rest.
+ * Allowing in rest will allow these taxonomy to be shown in block editor.
+ *
+ * @since 1.0.1
+ *
+ * @param array $args
+ * @return  array
+ */
+function PxH_WC_BE_Product_Taxonomy_Show_In_Rest( $args ) {
+	$args['show_in_rest'] = true;
+	return $args;
 }
 // End of file wc-block-editor.php
