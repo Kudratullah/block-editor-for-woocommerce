@@ -112,7 +112,6 @@ function PxH_WC_Enable_Block_Editor() {
  *
  * @since 1.0.0
  *
- * @param string $hook
  * @return void
  */
 function PxH_WC_Enable_Block_Editor_Scripts() {
