@@ -6,7 +6,7 @@ Tags: WooCommerce, Block Editor, Gutenberg, Block
 Requires at least: 5.0
 Tested up to: 5.3
 WC Tested up to: 3.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.6
 
 Enable Block Editor (Gutenberg) For WooCommerce.
@@ -66,6 +66,9 @@ Please Clear your browser cache after enabling this plugin.
 3. WooCommerce Product MetaBoxes
 
 == Changelog ==
+
+= v1.0.1 (19th November, 2019) =
+ * Fix :: Enable taxonomies in Block Editor.
 
 = v1.0.0 (18th November, 2019) =
  * Initial Release.

@@ -4,7 +4,7 @@
  *
  * @author KD <webmaster@pixelhive.pro>
  * @package PxH_WC_Block_Editor
- * @version 1.0.0
+ * @version 1.0.1
  * @copyright 2019 PixelHive.PRO
  * @license GPL-v2 or later
  *
@@ -14,7 +14,7 @@
  * Plugin URI: https://pixelhive.pro/go/wcblockeditor/
  * Author: PixelHive
  * Author URI: https://pixelhive.pro
- * Version: 1.0.0
+ * Version: 1.0.1
  * License: GPL v3
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: pxh-wc-block-editor
