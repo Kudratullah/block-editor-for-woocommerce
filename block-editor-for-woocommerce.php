@@ -23,6 +23,7 @@
  * Tested up to: 5.3
  * WC tested up to: 3.8
  */
+
 /**
  * Copyright (c) 2019 Kudratullah (email: mhamudul.hk@gmail.com). All rights reserved.
  *
@@ -102,12 +103,16 @@ add_action( 'woocommerce_loaded', 'PxH_WC_Enable_Block_Editor', 9999 );
  *
  */
 function PxH_WC_Enable_Block_Editor() {
+	add_filter( 'woocommerce_register_post_type_product', 'PxH_WC_BE_Fix_Product_Template', 100 );
 	remove_filter( 'gutenberg_can_edit_post_type', 'WC_Post_Types::gutenberg_can_edit_post_type', 10 );
 	remove_filter( 'use_block_editor_for_post_type', 'WC_Post_Types::gutenberg_can_edit_post_type', 10 );
 	add_action( 'admin_enqueue_scripts', 'PxH_WC_Block_Editor_Scripts', 10 );
+
 	// set show_in_rest = true for product_cat & product_tag for showing in block editor taxonomy selector
 	add_filter( 'woocommerce_taxonomy_args_product_cat', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest' );
 	add_filter( 'woocommerce_taxonomy_args_product_tag', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest' );
+
+	add_action( 'pre_post_update', 'PxH_WC_BE_Stop_Resetting_Missing_Catalog_Options', -1 );
 }
 
 /**
@@ -151,4 +156,49 @@ function PxH_WC_BE_Product_Taxonomy_Show_In_Rest( $args ) {
 
 	return $args;
 }
+
+
+/**
+ * Disable new WooCommerce product template (from Version 7.7.0).
+ *
+ * @param array $post_type_args
+ *
+ * @return array
+ */
+function PxH_WC_BE_Fix_Product_Template( $post_type_args ) {
+	if ( array_key_exists( 'template', $post_type_args ) ) {
+		unset( $post_type_args['template'] );
+		unset( $post_type_args['template_lock'] );
+	}
+
+	return $post_type_args;
+}
+
+function PxH_WC_BE_Stop_Resetting_Missing_Catalog_Options( $post_id ) {
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	$currentScreen = get_current_screen();
+	if ( $currentScreen->id !== 'product' || $currentScreen->post_type !== 'product' ) {
+		return;
+	}
+
+	try {
+		$product = WC()->product_factory->get_product( $post_id );
+	} catch ( \Exception $exception ) {
+		return;
+	}
+
+	if ( ! ( $product instanceof \WC_Product ) ) {
+		return;
+	}
+
+	if ( $product->is_featured() ) {
+		$_POST['_featured'] = 'on';
+	}
+
+	$_POST['_visibility'] = $product->get_catalog_visibility();
+}
+
 // End of file wc-block-editor.php
