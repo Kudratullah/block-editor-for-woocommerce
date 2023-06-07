@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
-if( ! defined( 'PxH_WC_BE_VERSION' ) ) {
+if ( ! defined( 'PxH_WC_BE_VERSION' ) ) {
 	/**
 	 * Plugin Version
 	 * @var string
@@ -64,7 +64,7 @@ if( ! defined( 'PxH_WC_BE_VERSION' ) ) {
 	 */
 	define( 'PxH_WC_BE_VERSION', '1.0.0' );
 }
-if( ! defined( 'PxH_WC_BE_FILE' ) ) {
+if ( ! defined( 'PxH_WC_BE_FILE' ) ) {
 	/**
 	 * Absolute path to this plugin main file
 	 * @var string
@@ -72,7 +72,7 @@ if( ! defined( 'PxH_WC_BE_FILE' ) ) {
 	 */
 	define( 'PxH_WC_BE_FILE', __FILE__ );
 }
-if( ! defined( 'PxH_WC_BE_PATH' ) ) {
+if ( ! defined( 'PxH_WC_BE_PATH' ) ) {
 	/**
 	 * Absolute path to this plugin directory without trailing slash
 	 * @var string
@@ -80,7 +80,7 @@ if( ! defined( 'PxH_WC_BE_PATH' ) ) {
 	 */
 	define( 'PxH_WC_BE_PATH', dirname( PxH_WC_BE_FILE ) );
 }
-if( ! defined( 'PxH_WC_BE_URL' ) ) {
+if ( ! defined( 'PxH_WC_BE_URL' ) ) {
 	/**
 	 * URL Pointing to this plugin directory with trailing slash
 	 * @var string
@@ -97,35 +97,39 @@ add_action( 'woocommerce_loaded', 'PxH_WC_Enable_Block_Editor', 9999 );
  *
  * Remove filters applied by WooCommerce for disabling block editor on Product Edit Page
  *
+ * @return void
  * @since 1.0.0
  *
- * @return void
  */
 function PxH_WC_Enable_Block_Editor() {
 	remove_filter( 'gutenberg_can_edit_post_type', 'WC_Post_Types::gutenberg_can_edit_post_type', 10 );
 	remove_filter( 'use_block_editor_for_post_type', 'WC_Post_Types::gutenberg_can_edit_post_type', 10 );
 	add_action( 'admin_enqueue_scripts', 'PxH_WC_Block_Editor_Scripts', 10 );
 	// set show_in_rest = true for product_cat & product_tag for showing in block editor taxonomy selector
-	add_filter( 'woocommerce_taxonomy_args_product_cat', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest');
-	add_filter( 'woocommerce_taxonomy_args_product_tag', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest');
+	add_filter( 'woocommerce_taxonomy_args_product_cat', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest' );
+	add_filter( 'woocommerce_taxonomy_args_product_tag', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest' );
 }
 
 /**
  * Hooked callback for admin script enqueueing
  *
+ * @return void
  * @since 1.0.0
  *
- * @return void
  */
 function PxH_WC_Block_Editor_Scripts() {
-	$screen       = get_current_screen();
-	$screen_id    = $screen ? $screen->id : '';
-	$suffix       = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	$screen = get_current_screen();
+	$screen_id = $screen ? $screen->id : '';
+	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	if ( in_array( $screen_id, array( 'product', 'edit-product' ) ) ) {
 		wp_enqueue_script(
 			'pxh_wc_enable_block_editor',
 			PxH_WC_BE_URL . 'assets/js/admin' . $suffix . '.js',
-			[ 'jquery', 'postbox','wc-admin-product-meta-boxes' ], // make sure it loaded after wp postbox and wc product meta box scripts
+			[
+				'jquery',
+				'postbox',
+				'wc-admin-product-meta-boxes'
+			], // make sure it loaded after wp postbox and wc product meta box scripts
 			defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? filemtime( PxH_WC_BE_PATH . '/assets/js/admin.js' ) : PxH_WC_BE_VERSION,
 			true
 		);
@@ -136,13 +140,15 @@ function PxH_WC_Block_Editor_Scripts() {
  * Allow WooCommerce Product Category And Product Tags in rest.
  * Allowing in rest will allow these taxonomy to be shown in block editor.
  *
+ * @param array $args
+ *
+ * @return  array
  * @since 1.0.1
  *
- * @param array $args
- * @return  array
  */
 function PxH_WC_BE_Product_Taxonomy_Show_In_Rest( $args ) {
 	$args['show_in_rest'] = true;
+
 	return $args;
 }
 // End of file wc-block-editor.php
