@@ -2,18 +2,18 @@
 /**
  * Use Block Editor (Gutenberg) for WooCommerce Product Editing
  *
- * @author KD <webmaster@pixelhive.pro>
+ * @author Kudratullah <mhamudul.hk@gmail.com>
  * @package PxH_WC_Block_Editor
  * @version 1.0.1
- * @copyright 2019 PixelHive.PRO
+ * @copyright 2019 Kudratullah
  * @license GPL-v2 or later
  *
  * @wordpress
  * Plugin Name: Block Editor For WooCommerce
  * Description: Enable Block Editor (Gutenberg) for WooCommerce
- * Plugin URI: https://pixelhive.pro/go/wcblockeditor/
+ * Plugin URI: https://github.com/Kudratullah/block-editor-for-woocommerce
  * Author: PixelHive
- * Author URI: https://pixelhive.pro
+ * Author URI: https://github.com/Kudratullah
  * Version: 1.0.1
  * License: GPL v3
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -24,7 +24,7 @@
  * WC tested up to: 3.8
  */
 /**
- * Copyright (c) 2019 PixelHive.PRO (email: info@wpixelhive.pro). All rights reserved.
+ * Copyright (c) 2019 Kudratullah (email: mhamudul.hk@gmail.com). All rights reserved.
  *
  * Released under the GPL license
  * http://www.opensource.org/licenses/gpl-license.php

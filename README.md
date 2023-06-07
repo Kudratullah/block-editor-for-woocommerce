@@ -1,14 +1,11 @@
 ### Enable Block Editor (Gutenberg) For WooCommerce.
 
-![Block Editor For WooCommerce](https://pixelhive.pro/wp-content/uploads/2019/11/woocommerce-block-editor-banner.png)
 
 #### WooCommerce + Gutenberg = Awesome 🤩
 
 Now you can experiment with the visual block editor feature for editing WooCommerce Product description built within WordPress. This plugin will enable you to use all blocks provided by Gutenberg as-well-as all other awesome blocks released by many plugin authors.
 
 > Many people use visual editor for editing the WooCommerce Product. I was just experimenting with the  _Block Editor (Gutenberg)_, which now shipped with WordPress as the default editor. I enjoy using  _Block Editor_  and always wanted to use it with WooCommerce.
-> 
-> Me! (WebMaster) – [PixelHive.PRO](https://pixelhive.pro)
 
 
     This is a proof of concept ( and experimental) Plugin that Gutenberg is pretty awesome with WooCommerce.
