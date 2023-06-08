@@ -1,0 +1,4 @@
+.distignore
+.gitignore
+.svnignore
+README.md
