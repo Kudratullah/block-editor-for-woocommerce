@@ -113,6 +113,7 @@ function PxH_WC_Enable_Block_Editor() {
 	add_filter( 'woocommerce_taxonomy_args_product_tag', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest' );
 
 	add_action( 'pre_post_update', 'PxH_WC_BE_Stop_Resetting_Missing_Catalog_Options', -1 );
+	add_action( 'admin_footer', 'PxH_WC_BE_Review_Reply_Form' );
 }
 
 /**
@@ -127,6 +128,7 @@ function PxH_WC_Block_Editor_Scripts() {
 	$screen_id = $screen ? $screen->id : '';
 	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	if ( in_array( $screen_id, array( 'product', 'edit-product' ) ) ) {
+		wp_enqueue_script( 'wp-ajax-response' );
 		wp_enqueue_script(
 			'pxh_wc_enable_block_editor',
 			PxH_WC_BE_URL . 'assets/js/admin' . $suffix . '.js',
@@ -138,6 +140,11 @@ function PxH_WC_Block_Editor_Scripts() {
 			defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? filemtime( PxH_WC_BE_PATH . '/assets/js/admin.js' ) : PxH_WC_BE_VERSION,
 			true
 		);
+
+		if ( isset( $screen->post_type ) && post_type_supports( $screen->post_type, 'comments' ) ) {
+			wp_enqueue_script( 'admin-comments' );
+			enqueue_comment_hotkeys_js();
+		}
 	}
 }
 
@@ -174,6 +181,16 @@ function PxH_WC_BE_Fix_Product_Template( $post_type_args ) {
 	return $post_type_args;
 }
 
+/**
+ * Currently, in block editor we don't have product visibility options and featured checkbox.
+ * So everytime user saves product these values get reset.
+ * Set catalog visibility and feature checkbox value to $_POST var from product object to prevent this.
+ *
+ * @since 1.5.0
+ *
+ * @param string|int $post_id
+ *
+ */
 function PxH_WC_BE_Stop_Resetting_Missing_Catalog_Options( $post_id ) {
 	if ( ! is_admin() ) {
 		return;
@@ -199,6 +216,22 @@ function PxH_WC_BE_Stop_Resetting_Missing_Catalog_Options( $post_id ) {
 	}
 
 	$_POST['_visibility'] = $product->get_catalog_visibility();
+}
+
+//admin_footer-post.php
+//admin_footer-post-new.php
+
+function PxH_WC_BE_Review_Reply_Form() {
+	$screen = get_current_screen();
+	$screen_id = $screen ? $screen->id : '';
+	if ( in_array( $screen_id, array( 'product', 'edit-product' ) ) ) {
+		if ( isset( $screen->post_type ) && post_type_supports( $screen->post_type, 'comments' ) ) {
+			//require ABSPATH . 'wp-admin/edit-form-advanced.php';
+			echo '<div id="pxh-comment-form">';
+			wp_comment_reply();
+			echo '</div>';
+		}
+	}
 }
 
 // End of file wc-block-editor.php
