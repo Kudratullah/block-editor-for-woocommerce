@@ -1,6 +1,6 @@
 /**!
  * Admin Product Edit Screen
- * @version 1.5.0
+ * @version 1.1.0
  * @since 1.0.0
  */
 ;(function( $, window ){

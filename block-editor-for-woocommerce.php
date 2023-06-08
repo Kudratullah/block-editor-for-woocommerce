@@ -4,24 +4,24 @@
  *
  * @author Kudratullah <mhamudul.hk@gmail.com>
  * @package PxH_WC_Block_Editor
- * @version 1.0.1
+ * @version 1.1.0
  * @copyright 2019 Kudratullah
- * @license GPL-v2 or later
+ * @license GPL-v3 or later
  *
  * @wordpress
  * Plugin Name: Block Editor For WooCommerce
  * Description: Enable Block Editor (Gutenberg) for WooCommerce
  * Plugin URI: https://github.com/Kudratullah/block-editor-for-woocommerce
- * Author: PixelHive
+ * Author: Kudratullah
  * Author URI: https://github.com/Kudratullah
- * Version: 1.0.1
+ * Version: 1.1.0
  * License: GPL v3
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: pxh-wc-block-editor
  * Domain Path: /languages/
  * Requires at least: 5.0
- * Tested up to: 5.3
- * WC tested up to: 3.8
+ * Tested up to: 6.2
+ * WC tested up to: 7.7
  */
 
 /**
@@ -63,7 +63,7 @@ if ( ! defined( 'PxH_WC_BE_VERSION' ) ) {
 	 * @var string
 	 * @since 1.0.0
 	 */
-	define( 'PxH_WC_BE_VERSION', '1.0.0' );
+	define( 'PxH_WC_BE_VERSION', '1.1.0' );
 }
 if ( ! defined( 'PxH_WC_BE_FILE' ) ) {
 	/**
@@ -155,7 +155,7 @@ function PxH_WC_Block_Editor_Scripts() {
  * @param array $args
  *
  * @return  array
- * @since 1.0.1
+ * @since 1.1.0
  *
  */
 function PxH_WC_BE_Product_Taxonomy_Show_In_Rest( $args ) {

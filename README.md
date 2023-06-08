@@ -1,15 +1,18 @@
-### Enable Block Editor (Gutenberg) For WooCommerce.
+## Enable Block Editor (Gutenberg) For WooCommerce.
 
+[![WordPress](https://img.shields.io/wordpress/v/block-editor-for-woocommerce.svg?label=WordPress&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
+[![UptimeMonster Site Monitor Rating](https://img.shields.io/wordpress/plugin/r/block-editor-for-woocommerce?label=Rating&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
+[![UptimeMonster Site Monitor Version](https://img.shields.io/wordpress/plugin/v/block-editor-for-woocommerce.svg?label=Version&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
+[![UptimeMonster Site Monitor Downloads](https://img.shields.io/wordpress/plugin/dt/block-editor-for-woocommerce?label=Downloads&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
+---
 
-#### WooCommerce + Gutenberg = Awesome 🤩
+### WooCommerce + Gutenberg = Awesome 🤩
 
 Now you can experiment with the visual block editor feature for editing WooCommerce Product description built within WordPress. This plugin will enable you to use all blocks provided by Gutenberg as-well-as all other awesome blocks released by many plugin authors.
 
 > Many people use visual editor for editing the WooCommerce Product. I was just experimenting with the  _Block Editor (Gutenberg)_, which now shipped with WordPress as the default editor. I enjoy using  _Block Editor_  and always wanted to use it with WooCommerce.
 
 
-    This is a proof of concept ( and experimental) Plugin that Gutenberg is pretty awesome with WooCommerce.
-
-This plugin (Backend – Block Editor) tested with latest Chrome (Version 78) and Firefox (Version 67) for the meta box handling. As you probably know Block Editor always saves rendered HTML, so it should be safe to remove/disable this plugin anytime you want.
+As you probably know Block Editor always saves rendered HTML, so it should be safe to remove/disable this plugin anytime you want.
 
 Any bug report, PR, feature request will be appreciated.
