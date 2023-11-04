@@ -1,9 +1,10 @@
 ## Enable Block Editor (Gutenberg) For WooCommerce.
 
 [![WordPress](https://img.shields.io/wordpress/v/block-editor-for-woocommerce.svg?label=WordPress&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
-[![UptimeMonster Site Monitor Rating](https://img.shields.io/wordpress/plugin/r/block-editor-for-woocommerce?label=Rating&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
-[![UptimeMonster Site Monitor Version](https://img.shields.io/wordpress/plugin/v/block-editor-for-woocommerce.svg?label=Version&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
-[![UptimeMonster Site Monitor Downloads](https://img.shields.io/wordpress/plugin/dt/block-editor-for-woocommerce?label=Downloads&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
+[![Block Editor For WooCommerce Rating](https://img.shields.io/wordpress/plugin/r/block-editor-for-woocommerce?label=Rating&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
+[![Block Editor For WooCommerce Version](https://img.shields.io/wordpress/plugin/v/block-editor-for-woocommerce.svg?label=Version&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
+[![Block Editor For WooCommerce Downloads](https://img.shields.io/wordpress/plugin/dt/block-editor-for-woocommerce?label=Downloads&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
+[![Block Editor For WooCommerce Active Installs](https://img.shields.io/wordpress/plugin/installs/block-editor-for-woocommerce?label=Active+Installs&style=flat-square)](https://wordpress.org/plugins/block-editor-for-woocommerce/)
 ---
 
 ### WooCommerce + Gutenberg = Awesome 🤩
