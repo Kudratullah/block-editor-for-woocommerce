@@ -20,8 +20,8 @@
  * Text Domain: pxh-wc-block-editor
  * Domain Path: /languages/
  * Requires at least: 5.0
- * Tested up to: 6.2
- * WC tested up to: 7.7
+ * Tested up to: 6.3.2
+ * WC tested up to: 8.2.1
  */
 
 /**
@@ -99,16 +99,17 @@ add_action( 'woocommerce_loaded', 'PxH_WC_Enable_Block_Editor', 9999 );
  *
  */
 function PxH_WC_Enable_Block_Editor() {
+	add_action( 'before_woocommerce_init', 'PxH_Declare_WC_HPOS_Compatibility' );
 	add_filter( 'woocommerce_register_post_type_product', 'PxH_WC_BE_Fix_Product_Template', 100 );
 	remove_filter( 'gutenberg_can_edit_post_type', 'WC_Post_Types::gutenberg_can_edit_post_type', 10 );
 	remove_filter( 'use_block_editor_for_post_type', 'WC_Post_Types::gutenberg_can_edit_post_type', 10 );
-	add_action( 'admin_enqueue_scripts', 'PxH_WC_Block_Editor_Scripts', 10 );
+	add_action( 'admin_enqueue_scripts', 'PxH_WC_Block_Editor_Scripts' );
 
 	// set show_in_rest = true for product_cat & product_tag for showing in block editor taxonomy selector
 	add_filter( 'woocommerce_taxonomy_args_product_cat', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest' );
 	add_filter( 'woocommerce_taxonomy_args_product_tag', 'PxH_WC_BE_Product_Taxonomy_Show_In_Rest' );
 
-	add_action( 'pre_post_update', 'PxH_WC_BE_Stop_Resetting_Missing_Catalog_Options', - 1 );
+	add_action( 'pre_post_update', 'PxH_WC_BE_Stop_Resetting_Missing_Catalog_Options', -1 );
 	add_action( 'admin_footer', 'PxH_WC_BE_Review_Reply_Form' );
 }
 
@@ -234,6 +235,18 @@ function PxH_WC_BE_Review_Reply_Form() {
 			wp_comment_reply();
 			echo '</div>';
 		}
+	}
+}
+
+/**
+ * Declare HPOS (COT) compatibility for WooCommerce.
+ *
+ * @return void
+ * @since 1.2.0
+ */
+function PxH_Declare_WC_HPOS_Compatibility() {
+	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
 	}
 }
 
