@@ -4,7 +4,7 @@
  *
  * @author Kudratullah <mhamudul.hk@gmail.com>
  * @package PxH_WC_Block_Editor
- * @version 1.1.0
+ * @version 1.2.0
  * @copyright 2019 Kudratullah
  * @license GPL-v3 or later
  *
@@ -14,7 +14,7 @@
  * Plugin URI: https://github.com/Kudratullah/block-editor-for-woocommerce
  * Author: Kudratullah
  * Author URI: https://github.com/Kudratullah
- * Version: 1.1.0
+ * Version: 1.2.0
  * License: GPL v3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: pxh-wc-block-editor
@@ -62,7 +62,7 @@ if ( ! defined( 'PxH_WC_BE_VERSION' ) ) {
 	 * Plugin Version
 	 * @since 1.0.0
 	 */
-	define( 'PxH_WC_BE_VERSION', '1.1.0' );
+	define( 'PxH_WC_BE_VERSION', '1.2.0' );
 }
 if ( ! defined( 'PxH_WC_BE_FILE' ) ) {
 	/**

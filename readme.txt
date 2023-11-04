@@ -4,9 +4,9 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: WooCommerce, Block Editor, Gutenberg, Block
 Requires at least: 5.0
-Tested up to: 6.2
-WC Tested up to: 7.7
-Stable tag: 1.1.0
+Tested up to: 6.3.2
+WC Tested up to: 8.2.1
+Stable tag: 1.2.0
 Requires PHP: 5.6
 
 Enable Block Editor (Gutenberg) For WooCommerce.
@@ -71,10 +71,15 @@ Please Clear your browser cache after enabling this plugin.
 
 == Changelog ==
 
+= v1.2.0 (8th June, 2023) =
+ * Improved: Added compatibility for [HPOS](https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book) aka COT (Custom order table) thanks to [Kevin Shenk](https://profiles.wordpress.org/batonac/)
+ * Update: Tested on WordPress 6.3.2 & WooCommerce 8.2.1.
+ * Update: Reformat & update comment blocks. Reformat code & whitespace (as-per WordPress coding standard).
+
 = v1.1.0 (8th June, 2023) =
  * Fixed: Featured status reset upon product save (thanks to [JoshMoreno](https://github.com/JoshMoreno)).
  * Improved: Added back Review editing in block editor.
- * Update copyright holder name.
+ * Update: Copyright holder name.
 
 = v1.0.1 (19th November, 2019) =
  * Fixed: Enable taxonomies in Block Editor.
